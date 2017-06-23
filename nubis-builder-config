@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# This script sets up some default configuration for nubis-builder (Packer).
+#+ Only the 'aws_region' variable is required. The 'ami_regions' variable is
+#+ optional and can be adjusted.
+
+NubisBulderVersion=${1}
+
+DEST_FILE="/nubis/nubis-builder/nubis-builder-${NubisBulderVersion}/secrets/variables.json"
+cat >>${DEST_FILE} << EOH
+{
+  "variables": {
+    "aws_region": "us-west-2",
+    "ami_regions": ""
+  }
+}
+EOH

@@ -53,6 +53,13 @@ RUN ["/bin/bash", "-c", "set -o pipefail && mkdir -p /nubis/nubis-builder \
     && curl --silent -L https://github.com/nubisproject/nubis-builder/archive/v${NubisBulderVersion}.tar.gz \
     | tar --extract --gunzip --directory=/nubis/nubis-builder" ]
 
+# Configure nubis-builder
+COPY [ "nubis-builder-config", "/nubis/" ]
+RUN ["/bin/bash", "-c", "/nubis/nubis-builder-config ${NubisBulderVersion}" ]
+
+
 ENV PATH /nubis/nubis-builder/nubis-builder-${NubisBulderVersion}/bin:/nubis/bin:$PATH
 
-CMD [ "/bin/bash" ]
+ENTRYPOINT [ "nubis-builder", "build" ]
+
+CMD [ "--project-path", "/nubis/data" ]
