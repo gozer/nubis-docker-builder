@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     jq=1.5* \
     python-pip=8.1.* \
     unzip \
+    rsync \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /nubis
@@ -53,13 +54,11 @@ RUN ["/bin/bash", "-c", "set -o pipefail && mkdir -p /nubis/nubis-builder \
     && curl --silent -L https://github.com/nubisproject/nubis-builder/archive/v${NubisBulderVersion}.tar.gz \
     | tar --extract --gunzip --directory=/nubis/nubis-builder" ]
 
-# Configure nubis-builder
-COPY [ "nubis-builder-config", "/nubis/" ]
-RUN ["/bin/bash", "-c", "/nubis/nubis-builder-config ${NubisBulderVersion}" ]
-
+# Copy over the nubis-builder-wrapper script
+COPY [ "nubis-builder-wrapper", "/nubis/" ]
 
 ENV PATH /nubis/nubis-builder/nubis-builder-${NubisBulderVersion}/bin:/nubis/bin:$PATH
 
-ENTRYPOINT [ "nubis-builder", "build" ]
+ENTRYPOINT [ "/nubis/nubis-builder-wrapper" ]
 
-CMD [ "--project-path", "/nubis/data" ]
+CMD [ "build" ]
