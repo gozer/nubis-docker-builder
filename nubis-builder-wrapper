@@ -1,0 +1,78 @@
+#!/bin/bash
+
+NUBIS_VOLUME='/nubis/data'
+BUILD_PATH='/nubis/build'
+
+setup-build-dir () {
+    # Skip any downloaded terraform submodules.
+    #+ Terraform modules contain symlinks with full paths that are not valid in
+    #+ the container.
+    # Skip the nubis directory, we do not want it in the doc root
+    RSYNC=( 'rsync' '-auz' )
+    RSYNC_EXCLUDES=(  '--exclude=SEC,*.pid' )
+    RSYNC_EXCLUDES+=('--exclude=.terraform' )
+    RSYNC_EXCLUDES+=( '--exclude=.git*' )
+    RSYNC_EXCLUDES+=( '--exclude=.travis.yml' )
+    RSYNC_EXCLUDES+=( '--exclude=terraform.tfstate*' )
+    "${RSYNC[@]}" "${RSYNC_EXCLUDES[@]}" -x "${NUBIS_VOLUME}/" "${BUILD_PATH}/"
+}
+
+configure-builder () {
+    BUILD_REGION="${1:-us-west-2}"
+    COPY_REGIONS="${2}"
+
+    # NubisBulderVersion is set in the environment by the ENV <key>=<value> method
+    DEST_FILE="/nubis/nubis-builder/nubis-builder-${NubisBulderVersion}/secrets/variables.json"
+cat >>${DEST_FILE} << EOH
+{
+  "variables": {
+    "aws_region": "${BUILD_REGION}",
+    "ami_regions": "${COPY_REGIONS}"
+  }
+}
+EOH
+
+}
+
+run-builder () {
+    nubis-builder build --project-path "${BUILD_PATH}" "$@"
+}
+
+# Grab and setup called options
+while [ "$1" != "" ]; do
+    case $1 in
+        --build-region)
+            BUILD_REGION="${2}"
+            shift
+        ;;
+        --copy-regions)
+            COPY_REGIONS="${2}"
+            shift
+        ;;
+        build )
+            shift
+            setup-build-dir
+            configure-builder "${BUILD_REGION}" "${COPY_REGIONS}"
+            run-builder "$@"
+            exit 0
+        ;;
+        debug )
+            shift
+            setup-build-dir
+            configure-builder "${BUILD_REGION}" "${COPY_REGIONS}"
+            run-builder "$@" --packer-option -debug
+            exit 0
+        ;;
+        help )
+            echo -en "docker run --env-file ~/.docker_env -e GIT_COMMIT_SHA=$(git rev-parse HEAD) -v $PWD:/nubis/data nubis-builder\n\n"
+            echo -en "Usage: $0 command [options]\n\n"
+            echo -en "Commands:\n"
+            echo -en "  build [options]    Build project\n\n"
+            echo -en "  debug [options]    Build project in debug mode\n"
+            echo -en "                     Must set -it after run (docker run -it ...)\n\n"
+            echo -en "  help               Print this help message\n"
+            exit 0
+        ;;
+    esac
+    shift
+done
