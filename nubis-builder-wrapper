@@ -21,8 +21,8 @@ configure-builder () {
     BUILD_REGION="${1:-us-west-2}"
     COPY_REGIONS="${2}"
 
-    # NubisBulderVersion is set in the environment by the ENV <key>=<value> method
-    DEST_FILE="/nubis/nubis-builder/nubis-builder-${NubisBulderVersion}/secrets/variables.json"
+    # NubisBuilderVersion is set in the environment by the ENV <key>=<value> method
+    DEST_FILE="/nubis/nubis-builder/nubis-builder-${NubisBuilderVersion}/secrets/variables.json"
 cat >>${DEST_FILE} << EOH
 {
   "variables": {
