@@ -8,6 +8,7 @@ FROM ubuntu:16.04
 ENV AwCliVersion=1.10.38 \
     AwsVaultVersion=3.7.1 \
     PackerVersion=1.0.0 \
+    PuppetVersion=3.8.5-* \
     TerraformVersion=0.8.8 \
     UnicredsVersion=1.5.1 \
     LibrarianPuppetVersion=2.2.3 \
@@ -19,6 +20,7 @@ RUN apt-get update && apt-get install -y \
     git \
     jq=1.5* \
     python-pip=8.1.* \
+    puppet=${PuppetVersion} \
     unzip \
     rsync \
     ruby \
