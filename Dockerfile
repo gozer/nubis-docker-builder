@@ -11,7 +11,7 @@ ENV AwCliVersion=1.10.38 \
     TerraformVersion=0.8.8 \
     UnicredsVersion=1.5.1 \
     LibrarianPuppetVersion=2.2.3 \
-    NubisBulderVersion=1.5.1
+    NubisBuilderVersion=1.5.1
 
 # Intall package dependencies
 RUN apt-get update && apt-get install -y \
@@ -53,7 +53,7 @@ RUN ["/bin/bash", "-c", "set -o pipefail \
 
 # Install nubis-builder
 RUN ["/bin/bash", "-c", "set -o pipefail && mkdir -p /nubis/nubis-builder \
-    && curl --silent -L https://github.com/nubisproject/nubis-builder/archive/v${NubisBulderVersion}.tar.gz \
+    && curl --silent -L https://github.com/nubisproject/nubis-builder/archive/v${NubisBuilderVersion}.tar.gz \
     | tar --extract --gunzip --directory=/nubis/nubis-builder" ]
 
 # Install librarian-puppet
@@ -62,7 +62,7 @@ RUN gem install librarian-puppet -v ${LibrarianPuppetVersion}
 # Copy over the nubis-builder-wrapper script
 COPY [ "nubis-builder-wrapper", "/nubis/" ]
 
-ENV PATH /nubis/nubis-builder/nubis-builder-${NubisBulderVersion}/bin:/nubis/bin:$PATH
+ENV PATH /nubis/nubis-builder/nubis-builder-${NubisBuilderVersion}/bin:/nubis/bin:$PATH
 
 ENTRYPOINT [ "/nubis/nubis-builder-wrapper" ]
 
