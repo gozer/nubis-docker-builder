@@ -17,7 +17,7 @@ docker push nubisproject/nubis-builder:v0.2.0
 
 docker pull nubisproject/nubis-builder:v0.2.0
 
-ACCOUNT=',account-to-build-in>'
+ACCOUNT='<account-to-build-in>'
 
 aws-vault exec ${ACCOUNT} -- docker -it run --env-file ~/.docker_env -e GIT_COMMIT_SHA=$(git rev-parse HEAD) -v $PWD:/nubis/data nubis-builder
 
