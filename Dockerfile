@@ -31,6 +31,9 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /nubis
 
+# Allow everyone to write and copy to that directory
+RUN chmod 777 /nubis
+
 # Install the AWS cli tool
 RUN pip install awscli==${AwCliVersion}
 
