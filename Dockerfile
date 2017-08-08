@@ -31,9 +31,6 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /nubis
 
-# Allow everyone to write and copy to that directory
-RUN chmod 777 /nubis
-
 # Install the AWS cli tool
 RUN pip install awscli==${AwCliVersion}
 
@@ -53,6 +50,10 @@ RUN ["/bin/bash", "-c", "set -o pipefail \
 RUN ["/bin/bash", "-c", "set -o pipefail && mkdir -p /nubis/nubis-builder \
     && curl --silent -L https://github.com/nubisproject/nubis-builder/archive/v${NubisBuilderVersion}.tar.gz \
     | tar --extract --gunzip --directory=/nubis/nubis-builder" ]
+
+# Allow everyone to write and copy to that directory
+RUN chmod 777 /nubis && \
+    chmod 777 /nubis/nubis-builder/nubis-builder-${NubisBuilderVersion}/secrets
 
 # Install librarian-puppet
 RUN gem install librarian-puppet -v ${LibrarianPuppetVersion}
