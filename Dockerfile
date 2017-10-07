@@ -6,9 +6,9 @@ FROM alpine:3.6
 #+ This causes issues with extraction due to GitHub's methodology
 #+ Where necesary the 'v' is specified in code below
 ENV AwCliVersion=1.10.38 \
-    PackerVersion=1.0.2 \
-    PuppetVersion=3.8.5 \
-    TerraformVersion=0.8.8 \
+    PackerVersion=1.0.3 \
+    PuppetVersion=3.8.7 \
+    TerraformVersion=0.10.7 \
     LibrarianPuppetVersion=2.2.3 \
     NubisBuilderVersion=1.5.1
 
@@ -70,8 +70,7 @@ RUN apk del --no-cache \
   ruby-rdoc \
   ruby-irb \
   tar \
-  unzip \
-  git
+  unzip
 
 # Copy over the nubis-builder-wrapper script
 COPY [ "nubis-builder-wrapper", "/nubis/" ]
