@@ -10,7 +10,7 @@ ENV AwCliVersion=1.10.38 \
     PuppetVersion=3.8.5-* \
     TerraformVersion=0.8.8 \
     LibrarianPuppetVersion=2.2.3 \
-    NubisBuilderVersion=1.5.2
+    NubisBuilderVersion=1.5.1
 
 # Intall package dependencies
 RUN apt-get update && apt-get install -y \
