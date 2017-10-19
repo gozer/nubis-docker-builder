@@ -1,14 +1,24 @@
 # Change Log
 
+## [v0.7.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.7.0) (2017-10-19)
+[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.6.0...v0.7.0)
+
+**Merged pull requests:**
+
+- Upgrade to alpine linux [\#27](https://github.com/nubisproject/nubis-docker-builder/pull/27) ([tinnightcap](https://github.com/tinnightcap))
+
 ## [v0.6.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.6.0) (2017-10-19)
 [Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.5.0...v0.6.0)
 
 **Closed issues:**
 
 - Base off Apline Linux [\#17](https://github.com/nubisproject/nubis-docker-builder/issues/17)
+- Tag v0.6.0 release [\#28](https://github.com/nubisproject/nubis-docker-builder/issues/28)
 
 **Merged pull requests:**
 
+- Merge v0.6.0 release into develop. \[skip ci\] [\#30](https://github.com/nubisproject/nubis-docker-builder/pull/30) ([tinnightcap](https://github.com/tinnightcap))
+- Update CHANGELOG for v0.6.0 release \[skip ci\] [\#29](https://github.com/nubisproject/nubis-docker-builder/pull/29) ([tinnightcap](https://github.com/tinnightcap))
 - Fixing readme [\#26](https://github.com/nubisproject/nubis-docker-builder/pull/26) ([limed](https://github.com/limed))
 
 ## [v0.5.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.5.0) (2017-10-13)
