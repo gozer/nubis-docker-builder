@@ -48,11 +48,13 @@ pem-cleanup () {
 }
 
 run-builder () {
-    nubis-builder build --project-path "${BUILD_PATH}" "$@"
 
     if [ "${GIT_COMMIT_SHA:-NULL}" == 'NULL' ]; then
         GIT_COMMIT_SHA=$(cd ${NUBIS_VOLUME} && git rev-parse HEAD)
+        export GIT_COMMIT_SHA
     fi
+
+    nubis-builder build --project-path "${BUILD_PATH}" "$@"
 
     PROJECT_VERSION_STRING=$(jq --raw-output '"\(.variables.project_version)"' "${NUBIS_VOLUME}/nubis/builder/project.json")
 
@@ -66,6 +68,9 @@ run-builder () {
 # Grab and setup called options
 while [ "$1" != "" ]; do
     case $1 in
+        --debug )
+            set -x
+        ;;
         --build-region)
             BUILD_REGION="${2}"
             shift
