@@ -1,14 +1,28 @@
 # Change Log
 
+## [v0.6.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.6.0) (2017-10-19)
+[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.5.0...v0.6.0)
+
+**Closed issues:**
+
+- Base off Apline Linux [\#17](https://github.com/nubisproject/nubis-docker-builder/issues/17)
+
+**Merged pull requests:**
+
+- Fixing readme [\#26](https://github.com/nubisproject/nubis-docker-builder/pull/26) ([limed](https://github.com/limed))
+
 ## [v0.5.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.5.0) (2017-10-13)
 [Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.4.0...v0.5.0)
 
 **Closed issues:**
 
 - Use nubis-builder 1.5.2 [\#18](https://github.com/nubisproject/nubis-docker-builder/issues/18)
+- Tag v0.5.0 release [\#22](https://github.com/nubisproject/nubis-docker-builder/issues/22)
 
 **Merged pull requests:**
 
+- Merge v0.5.0 release into develop. \[skip ci\] [\#24](https://github.com/nubisproject/nubis-docker-builder/pull/24) ([tinnightcap](https://github.com/tinnightcap))
+- Update CHANGELOG for v0.5.0 release \[skip ci\] [\#23](https://github.com/nubisproject/nubis-docker-builder/pull/23) ([tinnightcap](https://github.com/tinnightcap))
 - Upgrade to nubis-builder v1.5.2 [\#21](https://github.com/nubisproject/nubis-docker-builder/pull/21) ([gozer](https://github.com/gozer))
 - Revert "Upgrade to nubis-builder v1.5.2" [\#20](https://github.com/nubisproject/nubis-docker-builder/pull/20) ([tinnightcap](https://github.com/tinnightcap))
 - Upgrade to nubis-builder v1.5.2 [\#19](https://github.com/nubisproject/nubis-docker-builder/pull/19) ([gozer](https://github.com/gozer))
