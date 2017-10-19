@@ -1,35 +1,42 @@
 # Docker image containing all dependencies for running nubis-builder
 
-FROM ubuntu:16.04
+FROM alpine:3.6
 
-# Do not add a 'v' as pert of the version string (ie: v1.1.3)
+# Do not add a 'v' as part of the version string (ie: v1.1.3)
 #+ This causes issues with extraction due to GitHub's methodology
 #+ Where necesary the 'v' is specified in code below
 ENV AwCliVersion=1.10.38 \
-    PackerVersion=1.0.2 \
-    PuppetVersion=3.8.5-* \
-    TerraformVersion=0.8.8 \
+    PackerVersion=1.0.3 \
+    PuppetVersion=3.8.7 \
+    TerraformVersion=0.10.7 \
     LibrarianPuppetVersion=2.2.3 \
     NubisBuilderVersion=1.5.1
 
-# Intall package dependencies
-RUN apt-get update && apt-get install -y \
-    curl \
-    git \
-    jq=1.5* \
-    python-pip=8.1.* \
-    puppet=${PuppetVersion} \
-    unzip \
-    rsync \
-    ruby \
-    && apt-get clean -y \
-    && apt-get autoclean -y \
-    && apt-get autoremove -y \
-    && apt-get purge -y \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && rm -rf /var/lib/{apt,dpkg,cache,log}/
-
 WORKDIR /nubis
+
+RUN apk add --no-cache \
+  curl \
+  bash \
+  less \
+  git \
+  jq \
+  unzip \
+  binutils \
+  rsync \
+  tar \
+  ruby \
+  ruby-rdoc \
+  ruby-irb \
+  python \
+  py2-pip
+
+RUN rm -f /var/cache/apk/APKINDEX.*
+
+# Install puppet
+RUN gem install puppet -v ${PuppetVersion} --no-rdoc --no-ri
+
+# Install librarian-puppet
+RUN gem install librarian-puppet -v ${LibrarianPuppetVersion}  --no-rdoc --no-ri
 
 # Install the AWS cli tool
 RUN pip install awscli==${AwCliVersion}
@@ -38,6 +45,7 @@ RUN pip install awscli==${AwCliVersion}
 RUN ["/bin/bash", "-c", "set -o pipefail \
     && curl --silent -L --out /nubis/packer_${PackerVersion}_linux_amd64.zip https://releases.hashicorp.com/packer/${PackerVersion}/packer_${PackerVersion}_linux_amd64.zip \
     && unzip /nubis/packer_${PackerVersion}_linux_amd64.zip -d /nubis/bin \
+    && strip /nubis/bin/packer \
     && rm -f /nubis/packer_${PackerVersion}_linux_amd64.zip" ]
 
 # Install Terraform
@@ -55,8 +63,14 @@ RUN ["/bin/bash", "-c", "set -o pipefail && mkdir -p /nubis/nubis-builder \
 RUN chmod 777 /nubis && \
     chmod 777 /nubis/nubis-builder/nubis-builder-${NubisBuilderVersion}/secrets
 
-# Install librarian-puppet
-RUN gem install librarian-puppet -v ${LibrarianPuppetVersion}
+# Cleanup
+RUN apk del --no-cache \
+  binutils \
+  py2-pip \
+  ruby-rdoc \
+  ruby-irb \
+  tar \
+  unzip
 
 # Copy over the nubis-builder-wrapper script
 COPY [ "nubis-builder-wrapper", "/nubis/" ]
