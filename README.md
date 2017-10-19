@@ -9,7 +9,7 @@ Docker image for building Nubis AMIs
 ### Getting image and using image
 
 ```bash
-IMAGE_VERSION='v0.5.0'
+IMAGE_VERSION='v0.6.0'
 
 docker pull nubisproject/nubis-builder:${IMAGE_VERSION}
 
@@ -31,11 +31,10 @@ docker build -t nubis-builder .
 
 docker login
 
-IMAGE_VERSION='v0.5.0'
+IMAGE_VERSION='v0.6.0'
 
 docker tag nubis-builder nubisproject/nubis-builder:${IMAGE_VERSION}
 
 docker push nubisproject/nubis-builder:${IMAGE_VERSION}
 
 ```
-
