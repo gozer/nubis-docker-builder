@@ -1,10 +1,23 @@
 # Change Log
 
-## [v0.7.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.7.0) (2017-10-19)
-[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.6.0...v0.7.0)
+## [v0.8.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.8.0) (2017-10-26)
+[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.7.0...v0.8.0)
 
 **Merged pull requests:**
 
+- Update packer to v1.1.1 [\#34](https://github.com/nubisproject/nubis-docker-builder/pull/34) ([tinnightcap](https://github.com/tinnightcap))
+
+## [v0.7.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.7.0) (2017-10-19)
+[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.6.0...v0.7.0)
+
+**Closed issues:**
+
+- Tag v0.7.0 release [\#31](https://github.com/nubisproject/nubis-docker-builder/issues/31)
+
+**Merged pull requests:**
+
+- Merge v0.7.0 release into develop. \[skip ci\] [\#33](https://github.com/nubisproject/nubis-docker-builder/pull/33) ([tinnightcap](https://github.com/tinnightcap))
+- Update CHANGELOG for v0.7.0 release \[skip ci\] [\#32](https://github.com/nubisproject/nubis-docker-builder/pull/32) ([tinnightcap](https://github.com/tinnightcap))
 - Upgrade to alpine linux [\#27](https://github.com/nubisproject/nubis-docker-builder/pull/27) ([tinnightcap](https://github.com/tinnightcap))
 
 ## [v0.6.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.6.0) (2017-10-19)
