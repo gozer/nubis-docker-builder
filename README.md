@@ -9,7 +9,7 @@ Docker image for building Nubis AMIs
 ### Getting image and using image
 
 ```bash
-IMAGE_VERSION='v0.6.0'
+IMAGE_VERSION=$(curl -k -s -S "https://registry.hub.docker.com/v1/repositories/nubisproject/nubis-builder/tags" | jq --raw-output '.[]["name"]' | sort --field-separator=. --numeric-sort --reverse | grep -m 1 "^v")
 
 docker pull nubisproject/nubis-builder:${IMAGE_VERSION}
 
@@ -26,15 +26,6 @@ You should never need to do this since we have automated builds, but if you want
 ```bash
 
 cd <Docker file folder location>
-
 docker build -t nubis-builder .
-
-docker login
-
-IMAGE_VERSION='v0.6.0'
-
-docker tag nubis-builder nubisproject/nubis-builder:${IMAGE_VERSION}
-
-docker push nubisproject/nubis-builder:${IMAGE_VERSION}
 
 ```
