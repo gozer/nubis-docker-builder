@@ -10,11 +10,15 @@ ENV AwCliVersion=1.10.38 \
     PuppetVersion=3.8.7 \
     TerraformVersion=0.10.7 \
     LibrarianPuppetVersion=2.2.3 \
-    NubisBuilderVersion=1.5.4
+    NubisBuilderVersion=1.5.4 \
+    RubyVersion=2.0.0_p647-r0
 
 WORKDIR /nubis
 
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.0/main' >> /etc/apk/repositories
+
 RUN apk add --no-cache \
+  ca-certificates \
   curl \
   bash \
   less \
@@ -24,7 +28,7 @@ RUN apk add --no-cache \
   binutils \
   rsync \
   tar \
-  ruby \
+  ruby=${RubyVersion} \
   ruby-rdoc \
   ruby-irb \
   python \
@@ -36,7 +40,7 @@ RUN rm -f /var/cache/apk/APKINDEX.*
 RUN gem install puppet -v ${PuppetVersion} --no-rdoc --no-ri
 
 # Install librarian-puppet
-RUN gem install librarian-puppet -v ${LibrarianPuppetVersion}  --no-rdoc --no-ri
+RUN gem install librarian-puppet -v ${LibrarianPuppetVersion} --no-document
 
 # Install the AWS cli tool
 RUN pip install awscli==${AwCliVersion}

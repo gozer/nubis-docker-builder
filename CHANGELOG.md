@@ -1,22 +1,19 @@
 # Change Log
 
 ## [v0.9.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.9.0) (2017-10-27)
-[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.8.0...v0.9.0)
-
-**Merged pull requests:**
-
-- Update docs and update gem no-document [\#40](https://github.com/nubisproject/nubis-docker-builder/pull/40) ([tinnightcap](https://github.com/tinnightcap))
-- Downgrade Ruby to version 2.0  [\#39](https://github.com/nubisproject/nubis-docker-builder/pull/39) ([limed](https://github.com/limed))
-
-## [v0.8.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.8.0) (2017-10-26)
-[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.7.0...v0.8.0)
+[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.7.0...v0.9.0)
 
 **Closed issues:**
 
 - Tag v0.8.0 release [\#35](https://github.com/nubisproject/nubis-docker-builder/issues/35)
+- Tag v0.9.0 release [\#41](https://github.com/nubisproject/nubis-docker-builder/issues/41)
 
 **Merged pull requests:**
 
+- Merge v0.9.0 release into develop. \[skip ci\] [\#43](https://github.com/nubisproject/nubis-docker-builder/pull/43) ([tinnightcap](https://github.com/tinnightcap))
+- Update CHANGELOG for v0.9.0 release \[skip ci\] [\#42](https://github.com/nubisproject/nubis-docker-builder/pull/42) ([tinnightcap](https://github.com/tinnightcap))
+- Update docs and update gem no-document [\#40](https://github.com/nubisproject/nubis-docker-builder/pull/40) ([tinnightcap](https://github.com/tinnightcap))
+- Downgrade Ruby to version 2.0  [\#39](https://github.com/nubisproject/nubis-docker-builder/pull/39) ([limed](https://github.com/limed))
 - Merge v0.8.0 release into develop. \[skip ci\] [\#37](https://github.com/nubisproject/nubis-docker-builder/pull/37) ([tinnightcap](https://github.com/tinnightcap))
 - Update CHANGELOG for v0.8.0 release \[skip ci\] [\#36](https://github.com/nubisproject/nubis-docker-builder/pull/36) ([tinnightcap](https://github.com/tinnightcap))
 - Update packer to v1.1.1 [\#34](https://github.com/nubisproject/nubis-docker-builder/pull/34) ([tinnightcap](https://github.com/tinnightcap))
