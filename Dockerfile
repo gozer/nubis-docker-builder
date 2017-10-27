@@ -40,7 +40,7 @@ RUN rm -f /var/cache/apk/APKINDEX.*
 RUN gem install puppet -v ${PuppetVersion} --no-rdoc --no-ri
 
 # Install librarian-puppet
-RUN gem install librarian-puppet -v ${LibrarianPuppetVersion}  --no-rdoc --no-ri
+RUN gem install librarian-puppet -v ${LibrarianPuppetVersion} --no-document
 
 # Install the AWS cli tool
 RUN pip install awscli==${AwCliVersion}
