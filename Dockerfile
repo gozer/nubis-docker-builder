@@ -10,8 +10,7 @@ ENV AwCliVersion=1.10.38 \
     PuppetVersion=3.8.7 \
     TerraformVersion=0.10.7 \
     LibrarianPuppetVersion=2.2.3 \
-    NubisBuilderVersion=1.5.4 \
-    RubyVersion=2.0.0_p647-r0
+    NubisBuilderVersion=1.5.5
 
 WORKDIR /nubis
 
