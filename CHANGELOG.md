@@ -1,15 +1,25 @@
 # Change Log
 
-## [v0.9.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.9.0) (2017-10-27)
-[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.7.0...v0.9.0)
-
-**Closed issues:**
-
-- Tag v0.8.0 release [\#35](https://github.com/nubisproject/nubis-docker-builder/issues/35)
-- Tag v0.9.0 release [\#41](https://github.com/nubisproject/nubis-docker-builder/issues/41)
+## [v1.0.0](https://github.com/nubisproject/nubis-docker-builder/tree/v1.0.0) (2017-11-28)
+[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.10.0...v1.0.0)
 
 **Merged pull requests:**
 
+- Update to latest nubis-builder version [\#47](https://github.com/nubisproject/nubis-docker-builder/pull/47) ([tinnightcap](https://github.com/tinnightcap))
+
+## [v0.10.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.10.0) (2017-10-27)
+[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.7.0...v0.10.0)
+
+**Closed issues:**
+
+- Tag v0.9.0 release [\#41](https://github.com/nubisproject/nubis-docker-builder/issues/41)
+- Tag v0.8.0 release [\#35](https://github.com/nubisproject/nubis-docker-builder/issues/35)
+- Tag v0.10.0 release [\#44](https://github.com/nubisproject/nubis-docker-builder/issues/44)
+
+**Merged pull requests:**
+
+- Merge v0.10.0 release into develop. \[skip ci\] [\#46](https://github.com/nubisproject/nubis-docker-builder/pull/46) ([tinnightcap](https://github.com/tinnightcap))
+- Update CHANGELOG for v0.10.0 release \[skip ci\] [\#45](https://github.com/nubisproject/nubis-docker-builder/pull/45) ([tinnightcap](https://github.com/tinnightcap))
 - Merge v0.9.0 release into develop. \[skip ci\] [\#43](https://github.com/nubisproject/nubis-docker-builder/pull/43) ([tinnightcap](https://github.com/tinnightcap))
 - Update CHANGELOG for v0.9.0 release \[skip ci\] [\#42](https://github.com/nubisproject/nubis-docker-builder/pull/42) ([tinnightcap](https://github.com/tinnightcap))
 - Update docs and update gem no-document [\#40](https://github.com/nubisproject/nubis-docker-builder/pull/40) ([tinnightcap](https://github.com/tinnightcap))
