@@ -7,10 +7,8 @@ FROM alpine:3.6
 #+ Where necesary the 'v' is specified in code below
 ENV AwCliVersion=1.10.38 \
     PackerVersion=1.1.1 \
-    PuppetVersion=3.8.7 \
     TerraformVersion=0.10.7 \
-    LibrarianPuppetVersion=2.2.3 \
-    NubisBuilderVersion=1.5.4 \
+    NubisBuilderVersion=1.5.5 \
     RubyVersion=2.0.0_p647-r0
 
 WORKDIR /nubis
@@ -35,12 +33,6 @@ RUN apk add --no-cache \
   py2-pip
 
 RUN rm -f /var/cache/apk/APKINDEX.*
-
-# Install puppet
-RUN gem install puppet -v ${PuppetVersion} --no-rdoc --no-ri
-
-# Install librarian-puppet
-RUN gem install librarian-puppet -v ${LibrarianPuppetVersion} --no-document
 
 # Install the AWS cli tool
 RUN pip install awscli==${AwCliVersion}
