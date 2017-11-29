@@ -1,10 +1,23 @@
 # Change Log
 
-## [v1.0.0](https://github.com/nubisproject/nubis-docker-builder/tree/v1.0.0) (2017-11-28)
-[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.10.0...v1.0.0)
+## [v1.0.1](https://github.com/nubisproject/nubis-docker-builder/tree/v1.0.1) (2017-11-29)
+[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v1.0.0...v1.0.1)
 
 **Merged pull requests:**
 
+- Update to latest nubis-builder [\#51](https://github.com/nubisproject/nubis-docker-builder/pull/51) ([tinnightcap](https://github.com/tinnightcap))
+
+## [v1.0.0](https://github.com/nubisproject/nubis-docker-builder/tree/v1.0.0) (2017-11-28)
+[Full Changelog](https://github.com/nubisproject/nubis-docker-builder/compare/v0.10.0...v1.0.0)
+
+**Closed issues:**
+
+- Tag v1.0.0 release [\#48](https://github.com/nubisproject/nubis-docker-builder/issues/48)
+
+**Merged pull requests:**
+
+- Merge v1.0.0 release into develop. \[skip ci\] [\#50](https://github.com/nubisproject/nubis-docker-builder/pull/50) ([tinnightcap](https://github.com/tinnightcap))
+- Update CHANGELOG for v1.0.0 release \[skip ci\] [\#49](https://github.com/nubisproject/nubis-docker-builder/pull/49) ([tinnightcap](https://github.com/tinnightcap))
 - Update to latest nubis-builder version [\#47](https://github.com/nubisproject/nubis-docker-builder/pull/47) ([tinnightcap](https://github.com/tinnightcap))
 
 ## [v0.10.0](https://github.com/nubisproject/nubis-docker-builder/tree/v0.10.0) (2017-10-27)
