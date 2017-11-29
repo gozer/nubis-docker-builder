@@ -8,7 +8,7 @@ FROM alpine:3.6
 ENV AwCliVersion=1.10.38 \
     PackerVersion=1.1.1 \
     TerraformVersion=0.10.7 \
-    NubisBuilderVersion=1.5.5 \
+    NubisBuilderVersion=1.5.6 \
     RubyVersion=2.0.0_p647-r0
 
 WORKDIR /nubis
